@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-slide-up {
+  animation: slideUp 0.5s forwards;
+}
+
+@keyframes bounceFast {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+.animate-bounce-fast {
+  animation: bounceFast 0.3s ease-out;
+}
