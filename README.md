@@ -91,8 +91,8 @@ src
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/your-username/myblog.git
-cd myblog
+git clone https://github.com/AihamJassar/blog-app.git
+cd blog-app
 ```
 
 2. Install dependencies:
