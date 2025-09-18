@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { Navbar } from "@/components/layout/navbar";
-import "../styles/globals.css";
+import "@/styles/globals.css";
 import { Footer } from "@/components/layout/footer";
 
 export const metadata: Metadata = {
@@ -39,6 +39,7 @@ export const metadata: Metadata = {
 };
 
 export default function SiteLayout({ children }: { children: ReactNode }) {
+
   return (
     <html lang="en">
       <body className="bg-gray-50 dark:bg-gray-950 text-gray-900 dark:text-gray-100">

@@ -2,7 +2,7 @@ import type { Config } from "tailwindcss";
 import lineClamp from "@tailwindcss/line-clamp";
 
 const config: Config = {
-  darkMode: "class", // التحكم في الـ Dark Mode باستخدام class
+  darkMode: "class", 
   content: [
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -13,7 +13,7 @@ const config: Config = {
     extend: {
       colors: {
         brand: {
-          DEFAULT: "#1DA1F2", // اللون الرئيسي (مثال تويتر بلو)
+          DEFAULT: "#1DA1F2",
           dark: "#1A91DA",
           light: "#E8F5FD",
         },
@@ -28,7 +28,6 @@ const config: Config = {
     },
   },
   plugins: [
-    lineClamp, // للتحكم بعدد الأسطر النصية
   ],
 };
 

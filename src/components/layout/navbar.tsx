@@ -1,10 +1,18 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import { DarkToggle } from "./dark-toggle";
 
 export const Navbar = () => {
+  const pathname = usePathname();
+
+  const links = [
+    { href: "/", label: "Home" },
+    { href: "/posts", label: "Posts" },
+    { href: "/about", label: "About" },
+  ];
 
   return (
     <motion.nav
@@ -24,24 +32,19 @@ export const Navbar = () => {
 
         {/* Links */}
         <div className="flex items-center gap-6">
-          <Link
-            href="/"
-            className="hover:text-indigo-500 dark:hover:text-indigo-300"
-          >
-            Home
-          </Link>
-          <Link
-            href="/posts"
-            className="hover:text-indigo-500 dark:hover:text-indigo-300"
-          >
-            Posts
-          </Link>
-          <Link
-            href="/about"
-            className="hover:text-indigo-500 dark:hover:text-indigo-300"
-          >
-            About
-          </Link>
+          {links.map((link, idx) => (
+            <Link
+              href={link.href}
+              key={idx}
+              className={`hover:text-indigo-500 dark:hover:text-indigo-300 transition-colors ${
+                pathname === link.href
+                  ? "text-indigo-500 dark:text-indigo-300 font-bold"
+                  : ""
+              }`}
+            >
+              {link.label}
+            </Link>
+          ))}
 
           {/* Theme Toggle */}
           <div className="flex items-center gap-4">

@@ -26,7 +26,7 @@ export const PostCard = ({ post }: PostCardProps) => {
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent group-hover:from-indigo-900/80 transition-colors"></div>
       <div className="absolute bottom-4 left-4 text-white">
-        <h2 className="text-xl font-bold mb-2 line-clamp-2">{post.title}</h2>
+        <h2 className="text-xl font-bold mb-2 line-clamp-1">{post.title}</h2>
         <p className="text-sm line-clamp-2 mb-3">{post.body}</p>
         <Link
           href={`/posts/${post.id}`}

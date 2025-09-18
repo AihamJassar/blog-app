@@ -4,10 +4,35 @@ import { useEffect, useState } from "react";
 import { fetchPost, fetchComments } from "@/lib/fetcher";
 import { CommentForm } from "@/components/post/comment-form";
 import { Comment, Post } from "@/types/post";
+import { Metadata } from "next";
 
 interface PostDetailPageProps {
   params: { id: string };
 }
+
+// export async function generateMetadata({
+//   params,
+// }: {
+//   params: { id: string };
+// }): Promise<Metadata> {
+//   const post = await fetchPost(params.id);
+//   return {
+//     title: post.title,
+//     description: post.body.slice(0, 150),
+//     openGraph: {
+//       title: post.title,
+//       description: post.body.slice(0, 150),
+//       images: [
+//         {
+//           url: `https://picsum.photos/seed/${post.id}/800/400`,
+//           width: 800,
+//           height: 400,
+//           alt: post.title,
+//         },
+//       ],
+//     },
+//   };
+// }
 
 export default function PostDetailPage({ params }: PostDetailPageProps) {
   const [post, setPost] = useState<Post | null>(null);
@@ -81,7 +106,9 @@ export default function PostDetailPage({ params }: PostDetailPageProps) {
               >
                 <h3 className="font-medium">{comment.name}</h3>
                 <p className="text-sm text-gray-500">{comment.email}</p>
-                <p className="mt-2 text-gray-700 dark:text-gray-300">{comment.body}</p>
+                <p className="mt-2 text-gray-700 dark:text-gray-300">
+                  {comment.body}
+                </p>
               </div>
             ))}
           </div>

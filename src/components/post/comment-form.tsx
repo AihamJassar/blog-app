@@ -8,7 +8,7 @@ interface CommentFormProps {
   onAdd: (comment: Comment) => void;
 }
 
-export const CommentForm = ({ postId, onAdd }: CommentFormProps) => {
+export const CommentForm = ({ onAdd }: CommentFormProps) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [body, setBody] = useState("");
